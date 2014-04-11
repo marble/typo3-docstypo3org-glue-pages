@@ -1,0 +1,20 @@
+﻿.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
+
+.. include:: ../../Includes.txt
+
+
+==============================
+Rendering
+==============================
+
+
+2012-11-26
+==========
+
+* Sphinx should grab DocumentTitle, Author, Version, Copyright from the
+  MasterDoc
+  
+  

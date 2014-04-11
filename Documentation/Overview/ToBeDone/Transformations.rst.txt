@@ -1,0 +1,97 @@
+﻿.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
+
+.. include:: ../../Includes.txt
+
+
+==============================
+X-Transformations
+==============================
+
+This information is mainly for strong wReSTlers and insiders.
+
+Table rows in ReST definition list notation
+===========================================
+
+Some tables in the old OpenOffice documents have been parsed to a 
+definition list ReST structure. When we now render those documents
+we are trying to recognize what kind of contents those tables had. We
+are doing this by looking at the old column names. For detection we
+currently use this table:
+
+.. code-block:: python
+
+      good_term_combinations = [
+          # (0, '10', [                                                ]),
+          # (0, '11', ['property'                                      ]),
+          # (0, '12', [            'datatype',                         ]),
+            (0, '13', ['property', 'datatype',                         ]),
+          # (0, '14', [                        'description',          ]),
+            (0, '15', ['property',             'description',          ]),
+            (0, '16', [            'datatype', 'description',          ]),
+            (0, '17', ['property', 'datatype', 'description',          ]),
+          # (0, '18', [                                       'default']),
+            (0, '19', ['property'                             'default']),
+            (0, '1a', [            'datatype',                'default']),
+            (0, '1b', ['property', 'datatype',                'default']),
+            (0, '1c', [                        'description', 'default']),
+            (0, '1d', ['property',             'description', 'default']),
+            (0, '1e', [            'datatype', 'description', 'default']),
+            (0, '1f', ['property', 'datatype', 'description', 'default']),
+           
+          # (0, '20', [                                            ]),
+          # (0, '21', ['datatype',                                 ]),
+          # (0, '22', [            'examples',                     ]),
+            (0, '23', ['datatype', 'examples'                      ]),
+          # (0, '24', [                        'comment'           ]),
+            (0, '25', ['datatype',             'comment',          ]),
+            (0, '26', [            'examples', 'comment',          ]),
+            (0, '27', ['datatype', 'examples', 'comment',          ]),
+          # (0, '28', [                                   'default']),
+            (0, '29', ['datatype',                        'default']),
+            (0, '2a', [            'examples',            'default']),
+            (0, '2b', ['datatype', 'examples',            'default']),
+            (0, '2c', [                        'comment', 'default']),
+            (0, '2d', ['datatype',             'comment', 'default']),
+            (0, '2e', [            'examples', 'comment', 'default']),
+            (0, '2f', ['datatype', 'examples', 'comment', 'default']),
+           
+          # (0, '30', [                                          ]),
+          # (0, '31', ['var',                                    ]),
+          # (0, '32', [       'phptype',                         ]),
+            (0, '33', ['var', 'phptype',                         ]),
+          # (0, '34', [                  'description',          ]),
+            (0, '35', ['var',            'description',          ]),
+            (0, '36', [       'phptype', 'description',          ]),
+            (0, '37', ['var', 'phptype', 'description',          ]),
+          # (0, '38', [                                 'default']),
+            (0, '39', ['var',                           'default']),
+            (0, '3a', [       'phptype',                'default']),
+            (0, '3b', ['var', 'phptype',                'default']),
+            (0, '3c', [                  'description', 'default']),
+            (0, '3d', ['var',            'description', 'default']),
+            (0, '3e', [       'phptype', 'description', 'default']),
+            (0, '3f', ['var', 'phptype', 'description', 'default']),
+            
+          # (0, '40', [                                         ]),
+          # (0, '41', ['key',                                   ]),
+          # (0, '42', [       'datatype',                       ]),
+            (0, '43', ['key', 'datatype',                       ]),
+          # (0, '44', [                   'description',        ]),
+            (0, '45', ['key',             'description',        ]),
+            (0, '46', [       'datatype', 'description',        ]),
+            (0, '47', ['key', 'datatype', 'description',        ]),
+          # (0, '48', [                                  'scope']),
+            (0, '49', ['key',                            'scope']),
+            (0, '4a', [       'datatype',                'scope']),
+            (0, '4b', ['key', 'datatype',                'scope']),
+            (0, '4c', [                   'description', 'scope']),
+            (0, '4d', ['key',             'description', 'scope']),
+            (0, '4e', [       'datatype', 'description', 'scope']),
+            (0, '4f', ['key', 'datatype', 'description', 'scope']),
+          ]
+
+The triples are: 'rowtype', 'rowid', pattern. 'rowtype' can still be
+adusted. Both 'rowtype' and 'rowid' are inserted into CSS classes.

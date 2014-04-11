@@ -1,0 +1,19 @@
+.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
+
+.. include:: ../Includes.txt
+
+
+==================================
+Extensions
+==================================
+
+TYPO3 CMS Documentation
+
+
+
+A first approximation: The list of 
+`TYPO3 CMS extension manuals <http://docs.typo3.org/typo3cms/extensions/>`__
+

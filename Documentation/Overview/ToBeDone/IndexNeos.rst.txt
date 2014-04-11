@@ -1,0 +1,17 @@
+﻿.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
+
+.. include:: ../../Includes.txt
+
+.. _start:
+
+==============================
+Welcome!
+==============================
+
+Welcome to TYPO3 Neos documentation
+===================================
+
+Documentation is on the way - come back soon!
